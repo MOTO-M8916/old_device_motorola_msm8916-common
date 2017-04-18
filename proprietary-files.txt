@@ -206,6 +206,9 @@ vendor/lib/libvoice-svc.so
 etc/firmware/sensorhubfw.bin
 etc/firmware/sensorhubver.txt
 
+# STLport
+vendor/lib/libstlport.so
+
 # Thermal
 vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
