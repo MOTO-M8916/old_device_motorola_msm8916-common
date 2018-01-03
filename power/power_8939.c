@@ -114,59 +114,12 @@ static void power_set_interactive(__attribute__((unused)) struct power_module *m
     }
 }
 
-static void set_power_profile(int profile)
-{
-    bool gov_interactive;
-
-    if (profile == current_power_profile)
-        return;
-
-    gov_interactive = check_governor();
-
-    switch (profile) {
-    case PROFILE_BALANCED:
-        if (gov_interactive) {
-            sysfs_write(BIG_PATH "go_hispeed_load", BIG_HISPEED_LOAD_BLNC);
-            sysfs_write(BIG_PATH "hispeed_freq", BIG_HISPEED_FREQ_BLNC);
-            sysfs_write(BIG_PATH "target_loads", BIG_TARGET_LOADS_BLNC);
-        }
-
-        sysfs_write(LOW_POWER, "0");
-        sysfs_write(BOOST_FREQ, BOOST_FREQ_BLNC);
-        ALOGD("%s: set balanced mode", __func__);
-        break;
-    case PROFILE_HIGH_PERFORMANCE:
-        if (gov_interactive) {
-            sysfs_write(BIG_PATH "go_hispeed_load", BIG_HISPEED_LOAD_FAST);
-            sysfs_write(BIG_PATH "hispeed_freq", BIG_HISPEED_FREQ_FAST);
-            sysfs_write(BIG_PATH "target_loads", BIG_TARGET_LOADS_FAST);
-        }
-
-        sysfs_write(LOW_POWER, "0");
-        sysfs_write(BOOST_FREQ, BOOST_FREQ_FAST);
-        ALOGD("%s: set performance mode", __func__);
-        break;
-    case PROFILE_POWER_SAVE:
-        sysfs_write(LOW_POWER, "1");
-        sysfs_write(BOOST_FREQ, BOOST_FREQ_SLOW);
-        ALOGD("%s: set powersave mode", __func__);
-        break;
-    default:
-        ALOGE("%s: unknown profile: %d", __func__, profile);
-    }
-
-    current_power_profile = profile;
-}
-
 static void power_hint( __attribute__((unused)) struct power_module *module,
                         __attribute__((unused)) power_hint_t hint,
                         void *data)
 {
     switch (hint) {
     case POWER_HINT_INTERACTION:
-        break;
-    case POWER_HINT_SET_PROFILE:
-        set_power_profile(*(int32_t *)data);
         break;
     case POWER_HINT_LOW_POWER:
         /* This hint is handled by the framework */
@@ -179,16 +132,6 @@ static void power_hint( __attribute__((unused)) struct power_module *module,
 static struct hw_module_methods_t power_module_methods = {
     .open = NULL,
 };
-
-
-static int get_feature(__attribute__((unused)) struct power_module *module,
-                       feature_t feature)
-{
-    if (feature == POWER_FEATURE_SUPPORTED_PROFILES) {
-        return PROFILE_MAX;
-    }
-    return -1;
-}
 
 struct power_module HAL_MODULE_INFO_SYM = {
     .common = {
@@ -203,6 +146,5 @@ struct power_module HAL_MODULE_INFO_SYM = {
 
     .init = power_init,
     .setInteractive = power_set_interactive,
-    .powerHint = power_hint,
-    .getFeature = get_feature
+    .powerHint = power_hint
 };
