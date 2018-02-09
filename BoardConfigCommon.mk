@@ -54,6 +54,7 @@ TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+ALLOW_MISSING_DEPENDENCIES := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
