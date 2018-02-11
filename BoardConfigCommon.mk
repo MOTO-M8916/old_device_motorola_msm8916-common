@@ -163,6 +163,9 @@ TARGET_LD_SHIM_LIBS := \
 TARGET_LD_PRELOAD := \
     /system/lib/libboringssl-compat.so
 
+# Snapdragon LLVM
+TARGET_USE_SDCLANG := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
