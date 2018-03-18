@@ -181,11 +181,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
     libOmxAmrEnc \
-    libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVenc \
     libOmxVidcCommon \
     libstagefrighthw
 
