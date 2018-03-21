@@ -29,6 +29,7 @@ ro.bluetooth.sap=true
 
 # Camera
 camera2.portability.force_api=1
+debug.camcorder.disablemeta=true
 
 # Display
 ro.opengles.version=196608
