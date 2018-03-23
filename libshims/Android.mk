@@ -48,3 +48,17 @@ LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+# Boring-ssl shim
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := \
+    bio_b64.c \
+    p_dec.c \
+    p_enc.c \
+    p_open.c \
+    p_seal.c \
+    rsa_pss.c
+LOCAL_SHARED_LIBRARIES := liblog libcrypto
+LOCAL_MODULE := libboringssl-compat
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
