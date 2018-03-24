@@ -3,7 +3,8 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
     framework/native/include \
-    system/media/camera/include
+    system/media/camera/include \
+    frameworks/native/include/media/openmax
 
 LOCAL_SRC_FILES := CameraWrapper.cpp
 
