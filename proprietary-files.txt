@@ -99,16 +99,6 @@ etc/firmware/a300_pm4.fw
 etc/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw
 
-# Media
-lib/libOmxVdecHevc.so
--vendor/lib/libHevcSwDecoder.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmmosal.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-
 # IMS
 bin/ims_rtp_daemon|15972385d74b9fa7e0a157d76360b053e2225661
 bin/imscmservice|04dcb605334f35f7f0b5d7586e4099a03bd77d56
