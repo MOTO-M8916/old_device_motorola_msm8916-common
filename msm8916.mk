@@ -228,6 +228,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libicuuc.vendor \
+    vndk_package
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.vndk.version=27.1.0
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
