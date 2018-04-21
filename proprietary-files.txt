@@ -46,10 +46,10 @@ vendor/lib/libmmQSM.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 
-# FM Radio
-lib/vendor.qti.hardware.fm@1.0.so
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
+# FM Radio - from oneplus3 - OPR6.170623.013 system dump
+-lib/vendor.qti.hardware.fm@1.0.so|a32ae5e1a604cc0fa0f1e0704616b5af4f0188a9
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|f64cc14d4c2ac1387a618ac90bd8688efd9fab1e
+vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so|8ac093a196439dc403b2fa099d838c33242efa82
 
 # GPS
 etc/flp.conf
@@ -104,7 +104,7 @@ lib/libOmxVdecHevc.so
 lib/libOmxCore.so
 lib/libOmxVdec.so
 lib/libOmxVenc.so
-vendor/lib/libHevcSwDecoder.so
+-vendor/lib/libHevcSwDecoder.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmmosal.so
 vendor/lib/libmm-color-convertor.so
