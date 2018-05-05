@@ -116,6 +116,10 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     Snap
 
+# Healthd packages
+PRODUCT_PACKAGES += \
+     charger_res_images
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
