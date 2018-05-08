@@ -236,6 +236,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.vndk.version=27.1.0
 
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vndk.version=27
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
