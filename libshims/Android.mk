@@ -15,15 +15,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Camera Shim
 include $(CLEAR_VARS)
-
 LOCAL_SRC_FILES := MediaCodec.cpp
-
 LOCAL_SHARED_LIBRARIES := libstagefright libmedia
-
 LOCAL_MODULE := libshims_camera
 LOCAL_MODULE_TAGS := optional
-
 include $(BUILD_SHARED_LIBRARY)
 
 # RIL
@@ -34,6 +31,7 @@ LOCAL_MODULE := libshim_ril
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
+# Qsap Shim
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libqsap_shim.c
 LOCAL_SHARED_LIBRARIES := libqsap_sdk liblog
@@ -41,6 +39,15 @@ LOCAL_C_INCLUDES := $(TOP)/system/qcom/softap/sdk
 LOCAL_MODULE := libqsap_shim
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+# libcutils
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := atomic.c
+LOCAL_WHOLE_STATIC_LIBRARIES := libcutils
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_MODULE := libc_util
+LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 # GPS
