@@ -86,3 +86,9 @@ rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
+
+# Play store
+ro.com.google.clientidbase.am=android-motorola
+ro.com.google.clientidbase.gmm=android-motorola
+ro.com.google.clientidbase.ms=android-motorola
+ro.com.google.clientidbase.yt=android-motorola
