@@ -123,6 +123,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.renderscript@1.0-impl \
+    libgenlock \
     gralloc.msm8916 \
     copybit.msm8916 \
     hwcomposer.msm8916 \
