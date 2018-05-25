@@ -3,10 +3,14 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
     framework/native/include \
+    frameworks/native/include/media/openmax \
     system/media/camera/include
 
-LOCAL_SRC_FILES := \
-    CameraWrapper.cpp
+ifeq ($(filter lux harpia,$(TARGET_DEVICE)),)
+LOCAL_SRC_FILES := CameraWrapper.cpp
+else
+LOCAL_SRC_FILES := CameraWrapper2.cpp
+endif
 
 LOCAL_SHARED_LIBRARIES := \
     libhardware \
@@ -16,6 +20,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhidltransport \
     libsensor \
     libutils \
+    libcutils \
     android.hidl.token@1.0-utils
 
 LOCAL_STATIC_LIBRARIES := \
