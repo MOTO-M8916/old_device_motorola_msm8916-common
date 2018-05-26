@@ -134,7 +134,10 @@ PRODUCT_PACKAGES += \
 
 # GPS Configs
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/gps/etc/gps.conf:system/vendor/etc/gps.conf
+    $(LOCAL_PATH)/gps/etc/gps.conf:system/vendor/etc/gps.conf \
+    $(LOCAL_PATH)/configs/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/configs/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/configs/sap.conf:system/etc/sap.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
