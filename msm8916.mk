@@ -125,11 +125,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    libgps.utils \
     gps.default \
-    libgnss \
-    liblocation_api \
-    android.hardware.gnss@1.0-impl-qti \
     libloc_api-rpc-qc
 
 # GPS Configs
