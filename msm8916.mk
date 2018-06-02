@@ -125,14 +125,17 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.default \
-    libloc_api-rpc-qc
+    android.hardware.gnss@1.0-service-qti \
+    android.hardware.gnss@1.0-impl \
+    libloc_api-rpc-qc \
+    gps.conf \
+    libcurl
 
 # GPS Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/vendor/etc/gps.conf \
     $(LOCAL_PATH)/configs/flp.conf:system/vendor/etc/flp.conf \
     $(LOCAL_PATH)/configs/lowi.conf:system/vendor/etc/lowi.conf \
+    $(LOCAL_PATH)/configs/xtwifi.conf:system/vendor/etc/xtwifi.conf \
     $(LOCAL_PATH)/configs/izat.conf:system/vendor/etc/izat.conf \
     $(LOCAL_PATH)/configs/sap.conf:system/vendor/etc/sap.conf
 
