@@ -178,16 +178,6 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service \
-    gps.msm8916 \
-    libshims_get_process_name
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
-
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.gps.agps_provider=1 \
 	ro.pip.gated=0
