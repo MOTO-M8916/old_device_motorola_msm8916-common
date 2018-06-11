@@ -85,6 +85,11 @@ PRODUCT_PACKAGES += \
     libshims_camera \
     Snap
 
+ifeq ($(filter osprey surnia merlin,$(TARGET_DEVICE)),)
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-service
+endif
+
 # Healthd packages
 PRODUCT_PACKAGES += \
      charger_res_images
@@ -164,6 +169,13 @@ PRODUCT_PACKAGES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2018-04-01
+
+# Buildprop
+ifeq ($(filter lux harpia,$(TARGET_DEVICE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+endif
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -259,3 +271,4 @@ $(call inherit-product-if-exists, vendor/motorola/msm8916-common/msm8916-common-
 $(call inherit-product-if-exists, vendor/motorola/msm8916-common/msm8916-common-vendor-ims-blobs.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+

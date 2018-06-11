@@ -31,8 +31,6 @@ ro.bluetooth.sap=true
 
 # Camera
 camera2.portability.force_api=1
-media.stagefright.legacyencoder=true
-media.stagefright.less-secure=true
 
 # Dalvik Heap
 dalvik.vm.boot-dex2oat-threads=4
