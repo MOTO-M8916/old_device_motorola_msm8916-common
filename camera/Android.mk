@@ -10,7 +10,7 @@ LOCAL_SRC_FILES := CameraWrapper.cpp
 LOCAL_SHARED_LIBRARIES := \
     libhardware \
     liblog \
-    libcamera_client \
+    android.hardware.camera.common@1.0-helper \
     libgui \
     libhidltransport \
     libsensor \

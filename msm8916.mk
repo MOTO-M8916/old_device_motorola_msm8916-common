@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.common@1.0-helper \
     camera.device@1.0-impl \
     camera.device@1.0-service \
     camera.msm8916 \
@@ -249,7 +250,8 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
-    vndk_package
+    vndk_package \
+    libstdc++.vendor
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.vndk.version=27.1.0
