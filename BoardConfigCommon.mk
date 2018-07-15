@@ -126,6 +126,11 @@ TARGET_EXFAT_DRIVER := exfat
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
 
+# Power
+TARGET_HAS_LEGACY_POWER_STATS := true
+TARGET_HAS_NO_WIFI_STATS := true
+TARGET_USES_INTERACTION_BOOST := true
+
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
