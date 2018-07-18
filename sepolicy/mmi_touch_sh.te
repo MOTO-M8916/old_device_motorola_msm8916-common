@@ -8,7 +8,7 @@ r_dir_file(mmi_touch_sh, firmware_file)
 
 # shell scripts need to execute /vendor/bin/sh and toolbox
 allow mmi_touch_sh { shell_exec toolbox_exec }:file rx_file_perms;
-allow mmi_touch_sh vendor_shell_exec:file rx_file_perm;
+allow mmi_touch_sh vendor_shell_exec:file rx_file_perms;
 allow mmi_touch_sh vendor_toolbox_exec:file rx_file_perms;
 
 # Logs to /dev/kmsg
