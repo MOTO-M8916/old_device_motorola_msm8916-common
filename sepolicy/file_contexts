@@ -1,6 +1,18 @@
 # Binaries
 /system/bin/grep                                            u:object_r:grep_exec:s0
 /system/vendor/bin/qmi_motext_hook                          u:object_r:rild_exec:s0
+/system/vendor/bin/adsprpcd                                       u:object_r:adsprpcd_exec:s0
+/system/vendor/bin/imsdatadaemon                                  u:object_r:ims_exec:s0
+/system/vendor/bin/imsqmidaemon                                   u:object_r:ims_exec:s0
+/system/vendor/bin/ims_rtp_daemon                                 u:object_r:hal_imsrtp_exec:s0
+/system/vendor/bin/irsc_util                                      u:object_r:irsc_util_exec:s0
+/system/vendor/bin/mm-qcamera-daemon                              u:object_r:mm-qcamerad_exec:s0
+/system/vendor/bin/netmgrd                                        u:object_r:netmgrd_exec:s0
+/system/vendor/bin/qmuxd                                          u:object_r:qmuxd_exec:s0
+/system/vendor/bin/qseecomd                                       u:object_r:tee_exec:s0
+/system/vendor/bin/rmt_storage                                    u:object_r:rmt_storage_exec:s0
+/system/vendor/bin/time_daemon                                    u:object_r:time_daemon_exec:s0
+
 /(vendor|system/vendor)/bin/akmd09912                       u:object_r:akmd09912_exec:s0
 /(vendor|system/vendor)/bin/stml0xx                         u:object_r:stml0xx_exec:s0
 
