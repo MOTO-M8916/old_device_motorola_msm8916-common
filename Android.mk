@@ -36,7 +36,7 @@ FIRMWARE_WCNSS_IMAGES := \
     wcnss.b06 wcnss.b09 wcnss.b10 wcnss.b11 \
     wcnss.mdt
 
-FIRMWARE_WCNSS_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_WCNSS_IMAGES)))
+FIRMWARE_WCNSS_SYMLINKS := $(addprefix $(TARGET_COPY_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_WCNSS_IMAGES)))
 $(FIRMWARE_WCNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "WCNSS Firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -48,7 +48,7 @@ ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WCNSS_SYMLINKS)
 FIRMWARE_WIDEVINE_IMAGES := \
     widevine.b00 widevine.b01 widevine.b02 widevine.b03 widevine.mdt
 
-FIRMWARE_WIDEVINE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(FIRMWARE_WIDEVINE_IMAGES)))
+FIRMWARE_WIDEVINE_SYMLINKS := $(addprefix $(TARGET_COPY_OUT_VENDOR)/firmware/,$(notdir $(FIRMWARE_WIDEVINE_IMAGES)))
 $(FIRMWARE_WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Widevine Firmware link: $@"
 	@mkdir -p $(dir $@)
