@@ -51,6 +51,7 @@ LOCAL_HEADER_LIBRARIES := \
     libloc_stub_headers
 
 LOCAL_MODULE := libloc_pla
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_PATH_32 := $(TARGET_OUT_VENDOR)/lib
 LOCAL_MODULE_PATH_64 := $(TARGET_OUT_VENDOR)/lib64
 LOCAL_MODULE_TAGS := optional
@@ -61,6 +62,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libloc_pla_headers
+LOCAL_VENDOR_MODULE := true
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/../include
 include $(BUILD_HEADER_LIBRARY)
 
