@@ -155,17 +155,17 @@ BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/lib/libandroid.so|/system/vendor/lib/libshim_ril.so \
-    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/libmot_sensorlistener.so|libsensor.so \
-    /system/vendor/lib/libjustshoot.so|libshims_camera.so \
-    /system/vendor/lib/libmmcamera_wavelet_lib.so|libc_util.so \
-    /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so \
-    /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so
+    /system/lib/libandroid.so|libshim_ril.so \
+    /vendor/lib/libmdmcutback.so|libqsap_shim.so \
+    /vendor/lib/libmot_sensorlistener.so|libsensor.so \
+    /vendor/lib/libjustshoot.so|libshims_camera.so \
+    /vendor/lib/libmmcamera_wavelet_lib.so|libc_util.so \
+    /vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so \
+    /vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so
 
 # Sp-shim
 TARGET_LD_PRELOAD := \
-    /system/vendor/lib/libboringssl-compat.so
+    /vendor/lib/libboringssl-compat.so
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
