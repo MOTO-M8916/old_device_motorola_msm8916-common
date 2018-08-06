@@ -261,3 +261,5 @@ $(call inherit-product-if-exists, vendor/motorola/msm8916-common/msm8916-common-
 $(call inherit-product-if-exists, vendor/motorola/msm8916-common/msm8916-common-vendor-ims-blobs.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+include device/motorola/msm8916-common/vendor-prop.mk
+include device/motorola/msm8916-common/default-prop.mk
