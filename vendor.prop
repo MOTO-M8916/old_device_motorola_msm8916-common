@@ -1,4 +1,4 @@
-# system.prop for msm8916-common
+# vendor.prop for msm8916-common
 
 # Camera
 ro.config.hw_camera_hdr=true
@@ -11,13 +11,13 @@ vendor.audio.offload.gapless.enabled=true
 av.offload.enable=true
 vendor.audio.av.streaming.offload.enable=false
 
-persist.audio.calfile0=/system/vendor/etc/acdbdata/Bluetooth_cal.acdb
-persist.audio.calfile1=/system/vendor/etc/acdbdata/General_cal.acdb
-persist.audio.calfile2=/system/vendor/etc/acdbdata/Global_cal.acdb
-persist.audio.calfile3=/system/vendor/etc/acdbdata/Handset_cal.acdb
-persist.audio.calfile4=/system/vendor/etc/acdbdata/Hdmi_cal.acdb
-persist.audio.calfile5=/system/vendor/etc/acdbdata/Headset_cal.acdb
-persist.audio.calfile6=/system/vendor/etc/acdbdata/Speaker_cal.acdb
+persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb
+persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb
+persist.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb
+persist.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb
+persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb
+persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb
+persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb
 
 ro.vendor.audio.ssr=false
 
@@ -114,7 +114,7 @@ persist.radio.no_wait_for_card=1
 persist.radio.oem_ind_to_both=false
 persist.radio.relay_oprt_change=1
 rild.libargs=-d /dev/smd0
-rild.libpath=/system/vendor/lib/libril-wrapper.so
+rild.libpath=/vendor/lib/libril-wrapper.so
 persist.radio.add_power_save=1
 
 ro.use_data_netmgrd=true
