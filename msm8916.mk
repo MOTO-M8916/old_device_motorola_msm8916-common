@@ -116,7 +116,7 @@ PRODUCT_PACKAGES += \
 # Firmware Extraction
 ifeq ($(filter surnia,$(TARGET_DEVICE)),)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/extract_firmware.sh:install/bin/extract_firmware.sh
+    $(LOCAL_PATH)/configs/extract_firmware.sh:$(TARGET_COPY_OUT_VENDOR)/bin/extract_firmware.sh
 endif
 
 # FM
