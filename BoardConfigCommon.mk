@@ -45,6 +45,10 @@ TARGET_CPU_VARIANT := cortex-a53
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# DataServices
+DEVICE_SPECIFIC_DATASERVICES := $(VENDOR_PATH)/dataservices
+USE_DEVICE_SPECIFIC_DATASERVICES := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x3F ehci-hcd.park=3 vmalloc=400M androidboot.bootdevice=7824900.sdhci utags.blkdev=/dev/block/bootdevice/by-name/utags utags.backup=/dev/block/bootdevice/by-name/utagsBackup movablecore=160M
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
