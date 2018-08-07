@@ -48,6 +48,8 @@ on early-init
 
 on init
 
+    export LD_PRELOAD /vendor/lib/libboring.so
+
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 

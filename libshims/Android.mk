@@ -19,7 +19,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := MediaCodec.cpp
 LOCAL_SHARED_LIBRARIES := libstagefright libmedia
-LOCAL_MODULE := libshims_camera
+LOCAL_MODULE := libshim_camera
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
@@ -28,7 +28,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := sensor.cpp
 LOCAL_SHARED_LIBRARIES := libsensor
-LOCAL_MODULE := libshim_ril
+LOCAL_MODULE := libshimril
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
@@ -38,7 +38,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := libqsap_shim.c
 LOCAL_SHARED_LIBRARIES := libqsap_sdk liblog
 LOCAL_C_INCLUDES := $(TOP)/system/qcom/softap/sdk
-LOCAL_MODULE := libqsap_shim
+LOCAL_MODULE := libqsapshim
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
@@ -64,7 +64,7 @@ LOCAL_SRC_FILES := \
     p_seal.c \
     rsa_pss.c
 LOCAL_SHARED_LIBRARIES := liblog libcrypto
-LOCAL_MODULE := libboringssl-compat
+LOCAL_MODULE := libboring
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
