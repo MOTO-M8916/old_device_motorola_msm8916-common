@@ -83,9 +83,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_PROVIDES_CAMERA_HAL := true
 
-ifeq ($(filter harpia,lux,$(TARGET_DEVICE)),)
 BOARD_GLOBAL_CFLAGS += -DCONFIG_MSM_USES_M_STACK
-endif
 
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
