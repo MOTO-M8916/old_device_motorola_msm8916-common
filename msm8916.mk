@@ -82,8 +82,8 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.msm8916 \
     libc_util \
-    libboringssl-compat \
-    libshims_camera \
+    libboring \
+    libshim_camera \
     Snap
 
 # Healthd packages
@@ -204,10 +204,10 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
-    libqsap_shim \
+    libqsapshim \
     libril-wrapper \
     librmnetctl \
-    libshim_ril \
+    libshimril \
     libxml2
 
 # Telephony
