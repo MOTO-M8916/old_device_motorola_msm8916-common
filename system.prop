@@ -117,8 +117,10 @@ rild.libargs=-d /dev/smd0
 rild.libpath=/system/vendor/lib/libril-wrapper.so
 persist.radio.add_power_save=1
 
+# Netmgrd
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
+persist.data.mode=concurrent
 
 # Play store
 ro.com.google.clientidbase.am=android-motorola
