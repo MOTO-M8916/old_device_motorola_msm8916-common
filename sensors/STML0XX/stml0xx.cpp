@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include <cutils/log.h>
 #include <linux/stml0xx.h>
+#include <unistd.h>
 
 /******************************* # defines **************************************/
 #define STM_DRIVER "/dev/stml0xx"
