@@ -74,12 +74,15 @@ PRODUCT_COPY_FILES +=  \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
     camera.device@1.0-impl \
+    camera.device@1.0-service \
     camera.msm8916 \
     libc_util \
     libboring \
@@ -95,8 +98,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@2.0-service \
     android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
+    android.hardware.renderscript@1.0-service \
     libgenlock \
     gralloc.msm8916 \
     copybit.msm8916 \
@@ -105,7 +111,8 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
 
 # Ebtables
 PRODUCT_PACKAGES += \
@@ -133,6 +140,7 @@ PRODUCT_PACKAGES += \
 # GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     android.hardware.gnss@1.0-impl-qti \
     android.hardware.gnss@1.0-service-qti
 
@@ -156,11 +164,13 @@ PRODUCT_COPY_FILES += \
 # Keystore
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service \
     keystore.msm8916
 
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
     lights.msm8916
 
 # LineageActions
@@ -192,6 +202,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service \
     power.msm8916
 
 # Ramdisk
@@ -224,14 +235,16 @@ PRODUCT_BOOT_JARS += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
 
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service
 
 # VNDK
 PRODUCT_PACKAGES += \
@@ -250,7 +263,8 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
 
 # Wifi
 PRODUCT_PACKAGES += \
