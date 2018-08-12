@@ -24,6 +24,7 @@
 #include <sched.h>
 #include <pthread.h>
 #include <linux/input.h>
+#include <unistd.h>
 
 #include "AKCommon.h"
 #include "AKMD_Driver.h"

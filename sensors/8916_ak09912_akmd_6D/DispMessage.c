@@ -23,6 +23,7 @@
  ******************************************************************************/
 #include "DispMessage.h"
 #include "AKCommon.h"
+#include <unistd.h>
 
 /*!
  Print startup message to Android Log daemon.

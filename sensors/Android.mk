@@ -86,6 +86,7 @@ ifeq ($(BOARD_USES_STML0XX_SENSOR_HUB), true)
     LOCAL_MODULE_TAGS := optional
     LOCAL_SHARED_LIBRARIES := liblog libcutils libz libdl libutils
     LOCAL_VENDOR_MODULE := true
+    LOCAL_HEADER_LIBRARIES := libhardware_headers
     LOCAL_MODULE := sensors.$(TARGET_BOARD_PLATFORM)
 
     include $(BUILD_SHARED_LIBRARY)
@@ -106,6 +107,7 @@ ifeq ($(BOARD_USES_STML0XX_SENSOR_HUB), true)
 
     LOCAL_SHARED_LIBRARIES := libcutils libc libutils liblog
     LOCAL_VENDOR_MODULE := true
+    LOCAL_HEADER_LIBRARIES := libhardware_headers
     LOCAL_MODULE := sensorhub.$(TARGET_BOARD_PLATFORM)
     LOCAL_MODULE_TAGS := optional
 
@@ -125,6 +127,8 @@ ifeq ($(BOARD_USES_STML0XX_SENSOR_HUB), true)
 
         LOCAL_MODULE  := akmd09912
         LOCAL_VENDOR_MODULE := true
+        LOCAL_HEADER_LIBRARIES := libandroid_sensor_headers
+        LOCAL_PROPRIETARY_MODULE := true
 
         LOCAL_C_INCLUDES := \
             $(LOCAL_PATH)/$(AKM_PATH) \
@@ -164,6 +168,9 @@ ifeq ($(BOARD_USES_STML0XX_SENSOR_HUB), true)
         LOCAL_MODULE_TAGS   := optional
         LOCAL_MODULE_CLASS  := STATIC_LIBRARIES
         LOCAL_MODULE_SUFFIX := .a
+        LOCAL_VENDOR_MODULE := true
+        LOCAL_HEADER_LIBRARIES := libandroid_sensor_headers
+        LOCAL_PROPRIETARY_MODULE := true
         LOCAL_SRC_FILES_arm   := $(AKM_PATH)/$(SMARTCOMPASS_LIB)/arm/libAK09912.a
         LOCAL_SRC_FILES_arm64 := $(AKM_PATH)/$(SMARTCOMPASS_LIB)/arm64/libAK09912.a
         include $(BUILD_PREBUILT)
@@ -183,6 +190,8 @@ ifeq ($(BOARD_USES_STML0XX_SENSOR_HUB), true)
     LOCAL_SRC_FILES := $(SH_PATH)/$(SH_MODULE).cpp
     LOCAL_MODULE:= $(SH_MODULE)
     LOCAL_VENDOR_MODULE := true
+    LOCAL_HEADER_LIBRARIES := libandroid_sensor_headers
+    LOCAL_PROPRIETARY_MODULE := true
     #LOCAL_CFLAGS+= -D_DEBUG
     LOCAL_CFLAGS += -Wall -Wextra -Weffc++
     LOCAL_SHARED_LIBRARIES := libcutils libc liblog

@@ -16,22 +16,23 @@
 LOCAL_PATH := $(call my-dir)
 
 # Camera Shim
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := MediaCodec.cpp
-LOCAL_SHARED_LIBRARIES := libstagefright libmedia
-LOCAL_MODULE := libshim_camera
-LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
+#include $(CLEAR_VARS)
+#LOCAL_SRC_FILES := MediaCodec.cpp
+#LOCAL_HEADER_LIBRARIES := libmedia_headers
+#LOCAL_MODULE := libshim_camera
+#LOCAL_VENDOR_MODULE := true
+#LOCAL_MODULE_TAGS := optional
+#include $(BUILD_SHARED_LIBRARY)
 
 # RIL
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := sensor.cpp
-LOCAL_SHARED_LIBRARIES := libsensor libandroid
-LOCAL_MODULE := libshimril
-LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE_TAGS := optional
-include $(BUILD_SHARED_LIBRARY)
+#include $(CLEAR_VARS)
+#LOCAL_SRC_FILES := sensor.cpp
+#LOCAL_SHARED_LIBRARIES := libandroid
+#LOCAL_HEADER_LIBRARIES := libandroid_sensor_headers
+#LOCAL_MODULE := libshimril
+#LOCAL_VENDOR_MODULE := true
+#LOCAL_MODULE_TAGS := optional
+#include $(BUILD_SHARED_LIBRARY)
 
 # Qsap Shim
 include $(CLEAR_VARS)

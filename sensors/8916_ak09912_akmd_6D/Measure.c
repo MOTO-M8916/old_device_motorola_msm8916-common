@@ -27,6 +27,7 @@
 #include "FileIO.h"
 #include "Measure.h"
 #include "misc.h"
+#include <unistd.h>
 
 
 #define ACC_ACQ_FLAG_POS	ACC_DATA_FLAG

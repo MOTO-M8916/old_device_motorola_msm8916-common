@@ -23,6 +23,7 @@
 #include <math.h>
 #include <poll.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <dirent.h>
 #include <sys/select.h>
 #include <dlfcn.h>

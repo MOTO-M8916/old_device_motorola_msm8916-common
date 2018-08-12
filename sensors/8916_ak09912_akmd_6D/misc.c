@@ -26,6 +26,7 @@
 #include <fcntl.h>
 #include <linux/input.h>
 #include <time.h> /* ns_to_timespec() */
+#include <unistd.h>
 
 static int s_fdForm = -1; /*!< FD to formation detect device */
 

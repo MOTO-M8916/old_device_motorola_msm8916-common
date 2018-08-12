@@ -1,4 +1,0 @@
-# Allow binder communication
-allow mediacodec audioserver_service:service_manager find;
-
-allow mediacodec mpctl_socket:dir search;

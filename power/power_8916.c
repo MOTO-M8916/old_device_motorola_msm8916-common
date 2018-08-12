@@ -22,7 +22,7 @@
 #include <fcntl.h>
 #include <string.h>
 
-#include <utils/Log.h>
+#include <log/log.h>
 
 #include "power.h"
 #include "power_device.h"

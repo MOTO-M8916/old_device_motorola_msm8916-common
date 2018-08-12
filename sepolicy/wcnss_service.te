@@ -1,1 +1,1 @@
-binder_use(wcnss_service)
+vndbinder_use(wcnss_service)

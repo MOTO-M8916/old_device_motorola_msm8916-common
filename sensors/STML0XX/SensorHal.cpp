@@ -30,6 +30,7 @@
 
 #include "Sensors.h"
 #include "SensorsPollContext.h"
+#include <unistd.h>
 
 
 static int poll__close(struct hw_device_t *dev)

@@ -25,6 +25,7 @@
 #include "AKMD_Driver.h"
 #include "FST.h"
 #include "misc.h"
+#include <unistd.h>
 
 #ifndef AKMD_FOR_AK09912
 #error "AKMD parameter is not set"

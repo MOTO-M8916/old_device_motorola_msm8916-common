@@ -22,6 +22,7 @@
  *
  ******************************************************************************/
 #include <fcntl.h>
+#include <unistd.h>
 #include "AKCommon.h"		// DBGPRINT()
 #include "AKMD_Driver.h"
 
