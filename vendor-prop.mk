@@ -1,0 +1,139 @@
+# prop for msm8916-common
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.hw_camera_hdr=true
+
+# Audio
+PRODUCT_PROPERTY_OVERRIDES += \
+	vendor.audio.offload.24bit.enable=false \
+	vendor.audio.offload.buffer.size.kb=64 \
+	vendor.audio.offload.gapless.enabled=true \
+	av.offload.enable=true \
+	vendor.audio.av.streaming.offload.enable=false \
+	persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
+	persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
+	persist.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
+	persist.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
+	persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
+	persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
+	persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
+	ro.vendor.audio.ssr=false \
+	vendor.voice.path.for.pcm.voip=true
+
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+	bluetooth.hfp.client=1 \
+	qcom.bluetooth.soc=smd \
+	ro.bluetooth.hfp.ver=1.6 \
+	ro.qualcomm.bt.hci_transport=smd \
+	ro.bluetooth.dun=true \
+	ro.bluetooth.sap=true
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+	camera2.portability.force_api=1 \
+	media.stagefright.legacyencoder=true \
+	media.stagefright.less-secure=true
+
+# Dalvik Heap
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.boot-dex2oat-threads=4 \
+	dalvik.vm.dex2oat-threads=2 \
+	dalvik.vm.image-dex2oat-threads=4 \
+	dalvik.vm.heapgrowthlimit=192m \
+	dalvik.vm.heapmaxfree=8m \
+	dalvik.vm.heapminfree=2m \
+	dalvik.vm.heapsize=36m \
+	dalvik.vm.heapsize=512m \
+	dalvik.vm.heapstartsize=8m \
+	dalvik.vm.heaptargetutilization=0.75
+
+# Display
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.opengles.version=196608 \
+	persist.hwc.mdpcomp.enable=1 \
+	debug.sf.enable_hwc_vds=1
+
+# GPS
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.gps.agps_provider=1 \
+	ro.pip.gated=0
+
+# HWUI
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.hwui.drop_shadow_cache_size=6 \
+	ro.hwui.gradient_cache_size=1 \
+	ro.hwui.layer_cache_size=48 \
+	ro.hwui.path_cache_size=32 \
+	ro.hwui.r_buffer_cache_size=8 \
+	ro.hwui.shape_cache_size=2 \
+	ro.hwui.text_large_cache_height=1024 \
+	ro.hwui.text_large_cache_width=2048 \
+	ro.hwui.text_small_cache_height=1024 \
+	ro.hwui.text_small_cache_width=1024 \
+	ro.hwui.texture_cache_flushrate=0.4 \
+	ro.hwui.texture_cache_size=72
+
+# Hotspot WiFi
+PRODUCT_PROPERTY_OVERRIDES += \
+	sys.usb.rps_mask=10
+
+# IMS
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.dbg.volte_avail_ovr=1 \
+	persist.radio.jbims=1 \
+	persist.radio.ROTATION_ENABLE=1 \
+	persist.radio.VT_ENABLE=1 \
+	persist.radio.VT_HYBRID_ENABLE=1 \
+	persist.radio.VT_USE_MDM_TIME=0 \
+	persist.dbg.vt_avail_ovr=1 \
+	persist.volte_enabled_by_hw=1 \
+	persist.data.iwlan.enable=true
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+	vidc.enc.narrow.searchrange=1 \
+	persist.media.treble_omx=false \
+	mm.enable.smoothstreaming=true \
+	mmp.enable.3g2=true \
+	media.aac_51_output_enabled=true \
+
+# NITZ
+#PRODUCT_PROPERTY_OVERRIDES += \
+#	persist.rild.nitz_plmn=\
+#	persist.rild.nitz_long_ons_0=\
+#	persist.rild.nitz_long_ons_1=\
+#	persist.rild.nitz_long_ons_2=\
+#	persist.rild.nitz_long_ons_3=\
+#	persist.rild.nitz_short_ons_0=\
+#	persist.rild.nitz_short_ons_1=\
+#	persist.rild.nitz_short_ons_2=\
+#	persist.rild.nitz_short_ons_3=\
+
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.data.qmi.adb_logmask=0 \
+	persist.radio.aosp_usr_pref_sel=true \
+	persist.radio.apn_delay=5000 \
+	persist.radio.apm_sim_not_pwdn=1 \
+	persist.radio.dfr_mode_set=1 \
+	persist.radio.no_wait_for_card=1 \
+	persist.radio.oem_ind_to_both=false \
+	persist.radio.relay_oprt_change=1 \
+	rild.libargs=-d/dev/smd0 \
+	rild.libpath=/vendor/lib/libril-wrapper.so \
+	persist.radio.add_power_save=1
+
+# Netmgrd
+	ro.use_data_netmgrd=true \
+	persist.data.netmgrd.qos.enable=true \
+	persist.data.mode=concurrent
+
+# Play store
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.com.google.clientidbase.am=android-motorola \
+	ro.com.google.clientidbase.gmm=android-motorola \
+	ro.com.google.clientidbase.ms=android-motorola \
+	ro.com.google.clientidbase.yt=android-motorola
+
