@@ -9,7 +9,7 @@ LOCAL_MODULE       := p2p_supplicant_overlay.conf
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_RELATIVE_PATH := wifi
+LOCAL_MODULE_RELATIVE_PATH := $(TARGET_VENDOR_OUT_ETC)/wifi
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
@@ -18,7 +18,7 @@ LOCAL_MODULE       := wpa_supplicant_overlay.conf
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_RELATIVE_PATH := wifi
+LOCAL_MODULE_RELATIVE_PATH := $(TARGET_VENDOR_OUT_ETC)/wifi
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
@@ -28,7 +28,7 @@ LOCAL_MODULE_CLASS := FAKE
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SYSTEM)/base_rules.mk
 $(LOCAL_BUILT_MODULE): TARGET := /persist/$(LOCAL_MODULE)
-$(LOCAL_BUILT_MODULE): SYMLINK := $(TARGET_OUT)/etc/firmware/wlan/prima/$(LOCAL_MODULE)
+$(LOCAL_BUILT_MODULE): SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/$(LOCAL_MODULE)
 $(LOCAL_BUILT_MODULE):
 	$(hide) echo "Symlink: $(SYMLINK) -> $(TARGET)"
 	$(hide) mkdir -p $(dir $@)
