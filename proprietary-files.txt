@@ -24,6 +24,7 @@ vendor/lib/libbtnv.so
 vendor/lib/libmot_sensorlistener.so
 vendor/lib/libbson.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libmmcamera2_imglib_modules.so|e5b722e22814902057ab081fc548219400799288
 
 # Camera firmware
 vendor/etc/firmware/cpp_firmware_v1_1_1.fw
