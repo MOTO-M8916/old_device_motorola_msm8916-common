@@ -61,7 +61,7 @@ TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
 
 # Kernel Toolchain
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-7.2/bin/arm-eabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(PWD)/prebuilts/gcc/linux-x86/arm/arm-eabi-7.3/bin/arm-eabi-
 
 # Audio
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
