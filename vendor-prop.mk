@@ -82,11 +82,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.dbg.volte_avail_ovr=1 \
 	persist.radio.jbims=1 \
 	persist.radio.ROTATION_ENABLE=1 \
-	persist.radio.VT_ENABLE=1 \
-	persist.radio.VT_HYBRID_ENABLE=1 \
-	persist.radio.VT_USE_MDM_TIME=0 \
-	persist.dbg.vt_avail_ovr=1 \
+	persist.dbg.ims_volte_enable=1 \
+	persist.dbg.wfc_avail_ovr=1 \
+	persist.radio.calls.on.ims=1 \
 	persist.volte_enabled_by_hw=1 \
+	service.qti.ims.enabled=1 \
 	persist.data.iwlan.enable=true
 
 # Media
