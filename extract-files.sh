@@ -18,13 +18,13 @@
 
 set -e
 
-# Load extractutils and do some sanity checks
+# Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-CM_ROOT="$MY_DIR"/../../..
+LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$CM_ROOT"/vendor/lineage/build/tools/extract_utils.sh
+HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -48,7 +48,8 @@ else
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
+
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
@@ -56,17 +57,33 @@ if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
     extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 fi
-"$MY_DIR"/setup-makefiles.sh
 
-BLOB_ROOT="$CM_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
 
 echo "Hexing Common: $DEVICE_COMMON libs"
-sed -i "s|libqsap_sdk.so|libqsapshim.so|g" $BLOB_ROOT/../$DEVICE_COMMON/vendor/lib/libmdmcutback.so
-sed -i "s|libandroid.so|libshimril.so|g" $BLOB_ROOT/../$DEVICE_COMMON/vendor/lib/libmdmcutback.so
-sed -i "s|libcutils.so|libsensor.so|g" $BLOB_ROOT/../$DEVICE_COMMON/vendor/lib/libmot_sensorlistener.so
+
+MDMCUTBACK="$COMMON_BLOB_ROOT"/vendor/lib/libmdmcutback.so
+sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
+sed -i "s|libandroid.so|libshimril.so|g" "$MDMCUTBACK"
+
+MOTSENSOR="$COMMON_BLOB_ROOT"/vendor/lib/libmot_sensorlistener.so
+sed -i "s|libcutils.so|libsensor.so|g" "$MOTSENSOR"
 
 echo "Hexing Device: $DEVICE libs"
-sed -i "s|libcutils.so|libc_util.so|g" $BLOB_ROOT/vendor/lib/libmmcamera_wavelet_lib.so
-sed -i "s|libcutils.so|libboring.so|g" $BLOB_ROOT/vendor/lib/libqomx_jpegenc.so
-sed -i "s|libcutils.so|libboring.so|g" $BLOB_ROOT/vendor/lib/libmmqjpeg_codec.so
-sed -i "s|libstagefright.so|libshim_camera.so|g" $BLOB_ROOT/vendor/lib/libjustshoot.so
+
+CAMERAWAVELET="$BLOB_ROOT"/vendor/lib/libmmcamera_wavelet_lib.so
+sed -i "s|libcutils.so|libc_util.so|g" "$CAMERAWAVELET"
+
+JPEGENC="$BLOB_ROOT"/vendor/lib/libqomx_jpegenc.so
+sed -i "s|libcutils.so|libboring.so|g" "$JPEGENC"
+
+MMQJPEG="$BLOB_ROOT"/vendor/lib/libmmqjpeg_codec.so
+sed -i "s|libcutils.so|libboring.so|g" "$MMQJPEG"
+
+JUSTSHOOT="$BLOB_ROOT"/vendor/lib/libjustshoot.so
+sed -i "s|libstagefright.so|libshim_camera.so|g" "$JUSTSHOOT"
+
+"$MY_DIR"/setup-makefiles.sh
+
