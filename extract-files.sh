@@ -54,7 +54,7 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+    setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
     extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 fi
 
