@@ -58,32 +58,5 @@ if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 fi
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-COMMON_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary
-
-echo "Hexing Common: $DEVICE_COMMON libs"
-
-MDMCUTBACK="$COMMON_BLOB_ROOT"/vendor/lib/libmdmcutback.so
-sed -i "s|libqsap_sdk.so|libqsapshim.so|g" "$MDMCUTBACK"
-sed -i "s|libandroid.so|libshimril.so|g" "$MDMCUTBACK"
-
-MOTSENSOR="$COMMON_BLOB_ROOT"/vendor/lib/libmot_sensorlistener.so
-sed -i "s|libcutils.so|libsensor.so|g" "$MOTSENSOR"
-
-echo "Hexing Device: $DEVICE libs"
-
-CAMERAWAVELET="$BLOB_ROOT"/vendor/lib/libmmcamera_wavelet_lib.so
-sed -i "s|libcutils.so|libc_util.so|g" "$CAMERAWAVELET"
-
-JPEGENC="$BLOB_ROOT"/vendor/lib/libqomx_jpegenc.so
-sed -i "s|libcutils.so|libboring.so|g" "$JPEGENC"
-
-MMQJPEG="$BLOB_ROOT"/vendor/lib/libmmqjpeg_codec.so
-sed -i "s|libcutils.so|libboring.so|g" "$MMQJPEG"
-
-JUSTSHOOT="$BLOB_ROOT"/vendor/lib/libjustshoot.so
-sed -i "s|libstagefright.so|libshim_camera.so|g" "$JUSTSHOOT"
-
 "$MY_DIR"/setup-makefiles.sh
 
