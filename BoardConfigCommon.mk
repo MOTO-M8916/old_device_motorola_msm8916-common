@@ -72,6 +72,8 @@ QCOM_BT_READ_ADDR_FROM_PROP := true
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_MEDIA_EXTENSIONS := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+	/vendor/bin/mm-qcamera-daemon=23
 
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
