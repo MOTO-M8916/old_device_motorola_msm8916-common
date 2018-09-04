@@ -105,6 +105,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
 
+# Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/qti_whitelist.xml
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -152,6 +156,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -196,6 +204,7 @@ PRODUCT_PACKAGES += \
     init.mmi.touch.sh \
     init.mmi.usb.rc \
     init.qcom.bt.sh \
+    init.qcom.sh \
     init.qcom.ril.sh \
     init.qcom.rc \
     stml0xx_wrapper.sh \

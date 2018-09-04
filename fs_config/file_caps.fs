@@ -14,18 +14,24 @@
 # limitations under the License.
 
 [system/vendor/bin/imsdatadaemon]
+mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
-mode: 0755
 caps: NET_BIND_SERVICE
 
 [system/vendor/bin/ims_rtp_daemon]
+mode: 0755
 user: AID_SYSTEM
 group: AID_RADIO
-mode: 0755
 caps: NET_BIND_SERVICE
 
-[system/bin/pm-service]
+[system/vendor/bin/imsrcsd]
+mode: 0755
+user: AID_SYSTEM
+group: AID_RADIO
+caps: WAKE_ALARM
+
+[vendor/bin/pm-service]
 user: AID_SYSTEM
 group: AID_SYSTEM
 mode: 0755
