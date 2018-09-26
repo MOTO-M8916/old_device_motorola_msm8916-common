@@ -77,6 +77,20 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     tinymix
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	vendor.audio.offload.buffer.size.kb=64 \
+	vendor.audio.offload.gapless.enabled=true \
+	vendor.audio.av.streaming.offload.enable=false \
+	persist.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb \
+	persist.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb \
+	persist.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb \
+	persist.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb \
+	persist.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb \
+	persist.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb \
+	persist.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb \
+	ro.vendor.audio.ssr=false \
+	vendor.voice.path.for.pcm.voip=true
+
 PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
@@ -87,6 +101,13 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	bluetooth.hfp.client=1 \
+	vendor.qcom.bluetooth.soc=pronto \
+	ro.bluetooth.hfp.ver=1.6 \
+	ro.bluetooth.dun=true \
+	ro.bluetooth.sap=true
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -95,6 +116,10 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libshims_camera \
     Snap
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	camera2.portability.force_api=1 \
+	debug.camcorder.disablemeta=true
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -123,6 +148,10 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
     libboringssl-compat
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.opengles.version=196608 \
+	persist.hwc.mdpcomp.enable=1 \
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -156,9 +185,29 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.gps.agps_provider=1 \
+	ro.pip.gated=0
+
+# Hotspot WiFi
+PRODUCT_PROPERTY_OVERRIDES += \
+	sys.usb.rps_mask=10
+
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.dbg.volte_avail_ovr=1 \
+	persist.radio.jbims=1 \
+	persist.radio.ROTATION_ENABLE=1 \
+	persist.radio.VT_ENABLE=1 \
+	persist.radio.VT_HYBRID_ENABLE=1 \
+	persist.radio.VT_USE_MDM_TIME=0 \
+	persist.dbg.vt_avail_ovr=1 \
+	persist.volte_enabled_by_hw=1 \
+	persist.data.iwlan.enable=true \
+ 	vendor.service.qti.ims.enabled=1
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -188,6 +237,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+	vidc.enc.narrow.searchrange=1 \
+	persist.media.treble_omx=false
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -222,6 +276,21 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libshim_ril \
     libxml2
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.data.qmi.adb_logmask=0 \
+	persist.radio.aosp_usr_pref_sel=true \
+	persist.radio.apn_delay=5000 \
+	persist.radio.apm_sim_not_pwdn=1 \
+	persist.radio.dfr_mode_set=1 \
+	persist.radio.no_wait_for_card=1 \
+	persist.radio.oem_ind_to_both=false \
+	persist.radio.relay_oprt_change=1 \
+	rild.libargs=-d/dev/smd0 \
+	rild.libpath=/vendor/lib/libril-wrapper.so \
+	persist.radio.add_power_save=1 \
+	ro.use_data_netmgrd=true \
+ 	persist.data.netmgrd.qos.enable=true
 
 # Telephony
 PRODUCT_PACKAGES += \
